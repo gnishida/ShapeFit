@@ -32,7 +32,14 @@
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionPredict"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuTool"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -59,6 +66,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionPredict">
+   <property name="text">
+    <string>Predict</string>
+   </property>
+   <property name="shortcut">
+    <string>P</string>
    </property>
   </action>
  </widget>

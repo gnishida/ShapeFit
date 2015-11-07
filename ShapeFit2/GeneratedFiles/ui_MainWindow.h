@@ -29,9 +29,11 @@ public:
     QAction *actionOpenCGA;
     QAction *actionExit;
     QAction *actionNew;
+    QAction *actionPredict;
     QWidget *centralWidget;
     QMenuBar *menuBar;
     QMenu *menuFile;
+    QMenu *menuTool;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -46,6 +48,8 @@ public:
         actionExit->setObjectName(QStringLiteral("actionExit"));
         actionNew = new QAction(MainWindowClass);
         actionNew->setObjectName(QStringLiteral("actionNew"));
+        actionPredict = new QAction(MainWindowClass);
+        actionPredict->setObjectName(QStringLiteral("actionPredict"));
         centralWidget = new QWidget(MainWindowClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         MainWindowClass->setCentralWidget(centralWidget);
@@ -54,6 +58,8 @@ public:
         menuBar->setGeometry(QRect(0, 0, 600, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QStringLiteral("menuFile"));
+        menuTool = new QMenu(menuBar);
+        menuTool->setObjectName(QStringLiteral("menuTool"));
         MainWindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindowClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -63,10 +69,12 @@ public:
         MainWindowClass->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
+        menuBar->addAction(menuTool->menuAction());
         menuFile->addAction(actionNew);
         menuFile->addAction(actionOpenCGA);
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
+        menuTool->addAction(actionPredict);
 
         retranslateUi(MainWindowClass);
 
@@ -80,7 +88,10 @@ public:
         actionExit->setText(QApplication::translate("MainWindowClass", "Exit", 0));
         actionNew->setText(QApplication::translate("MainWindowClass", "New", 0));
         actionNew->setShortcut(QApplication::translate("MainWindowClass", "Ctrl+N", 0));
+        actionPredict->setText(QApplication::translate("MainWindowClass", "Predict", 0));
+        actionPredict->setShortcut(QApplication::translate("MainWindowClass", "P", 0));
         menuFile->setTitle(QApplication::translate("MainWindowClass", "File", 0));
+        menuTool->setTitle(QApplication::translate("MainWindowClass", "Tool", 0));
     } // retranslateUi
 
 };

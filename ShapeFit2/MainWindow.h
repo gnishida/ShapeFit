@@ -18,6 +18,7 @@ public:
 public slots:
 	void onNew();
 	void onOpenCGA();
+	void onPredict();
 };
 
 #endif // MAINWINDOW_H

@@ -204,7 +204,6 @@ void GLWidget3D::mouseReleaseEvent(QMouseEvent *e) {
 	}
 	else {
 		dragging = false;
-		predict();
 	}
 }
 
